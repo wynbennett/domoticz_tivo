@@ -131,11 +131,11 @@ def onStop():
     global _plugin
     _plugin.onStop()
 
-def onConnect(Status, Description):
+def onConnect(Connection, Status, Description):
     global _plugin
     _plugin.onConnect(Status, Description)
 
-def onMessage(Data, Status, Extra):
+def onMessage(Connection, Data, Status, Extra):
     global _plugin
     _plugin.onMessage(Data, Status, Extra)
 
@@ -147,9 +147,9 @@ def onNotification(Name, Subject, Text, Status, Priority, Sound, ImageFile):
     global _plugin
     _plugin.onNotification(Name, Subject, Text, Status, Priority, Sound, ImageFile)
 
-def onDisconnect():
+def onDisconnect(Connection):
     global _plugin
-    _plugin.onDisconnect()
+    _plugin.onDisconnect(Connection)
 
 def onHeartbeat():
     global _plugin
